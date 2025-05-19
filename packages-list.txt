@@ -7,6 +7,5 @@ o	Findutils-4.1.2
 o	Grep-2.5.1a
 o	Gzip-1.3.12
 o	Make-4.0
-o	Python 3.4
 o	Perl-5.8.8
 o	Texinfo-4.7
