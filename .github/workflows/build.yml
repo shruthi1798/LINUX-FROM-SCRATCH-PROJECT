@@ -2,9 +2,10 @@ name: Build and Test
 
 on:
   push:
-    branches: [ feature-* ]
+    branches:
+      - 'feature-*'
     paths:
-      - '.github/workflows/build_test_publish.yml'
+      - '.github/workflows/build.yml'
 
   workflow_dispatch:
     inputs:
@@ -13,19 +14,15 @@ on:
         required: true
 
 jobs:
-
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - name: node dependencies
         run: echo "hello"
 
-    test:
-      runs-on: ubuntu-latest
-      if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.run_publish == 'true' }}
-
-      steps:
-      
-         - name: node dependencies
-           run: echo "hello"
+  test:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.run_publish != '' }}
+    steps:
+      - name: node dependencies
+        run: echo "hello"
