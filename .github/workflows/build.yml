@@ -1,0 +1,13 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ feature/* ]
+    paths:
+      - '.github/workflows/build_test_publish.yml'
+
+  workflow_dispatch:
+    inputs:
+      run_publish:
+        description: Provide the tag to build and release
+        required: true
