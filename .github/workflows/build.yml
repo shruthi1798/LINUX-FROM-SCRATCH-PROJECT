@@ -1,11 +1,6 @@
-name: Build and Test-02
+name: Build and Test-03
 
 on:
-  push:
-    branches:
-      - 'feature-*'
-    paths:
-      - '.github/workflows/build.yml'
 
   workflow_dispatch:
     inputs:
