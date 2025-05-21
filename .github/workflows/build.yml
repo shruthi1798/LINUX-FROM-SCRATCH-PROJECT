@@ -1,0 +1,25 @@
+name: Build and Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_publish:
+        description: Provide the tag to build and release
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: node dependencies
+        run: echo "hello"
+
+  test:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.run_publish != '' }}
+    steps:
+      - name: node dependencies
+        run: echo "${{ github.event.inputs.version.run_publish }}"
+
+      - name: hello
+        run: echo "hello"
