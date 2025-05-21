@@ -25,4 +25,4 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.run_publish != '' }}
     steps:
       - name: node dependencies
-        run: echo "hello"
+        run: echo "${{ github.event.inputs.version }}"
