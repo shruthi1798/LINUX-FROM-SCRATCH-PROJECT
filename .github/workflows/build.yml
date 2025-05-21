@@ -11,3 +11,9 @@ on:
       run_publish:
         description: Provide the tag to build and release
         required: true
+
+  jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello"
