@@ -13,12 +13,13 @@ on:
         required: true
 
   jobs:
-  build:
+
+   build:
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello"
 
-  test:
+   test:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.run_publish == 'true' }}
 
